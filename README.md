@@ -1,4 +1,4 @@
-Like a give a F***
+Like I give a Fuck
 ==================
 
-Browser Plugin for Facebook
+Browser Plugin for Facebook. Changes every 'Like' to 'I give a fuck' on facebook.com
