@@ -2,9 +2,9 @@
     "content_scripts": [
         "ligaf.js"
     ], 
-    "description": "Changes every occurance of Facebook's 'Like' to 'Give a Fuck'", 
+    "description": "Changes 'Like' to 'Give a Fuck' on Facebook.com", 
     "creator": "Fabian Schneider", 
-    "homepage_url": "http://retromediation.net/", 
-    "version": "0.6", 
+    "homepage_url": "http://like-i-give-a.retromediation.net/", 
+    "version": "0.7", 
     "name": "Like I Give A F***"
 }

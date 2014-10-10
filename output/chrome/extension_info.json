@@ -6,8 +6,8 @@
     "description": "Changes every occurance of Facebook's 'Like' to 'Give a Fuck'", 
     "creator": "Fabian Schneider", 
     "kango_package_id": "dev", 
-    "homepage_url": "http://retromediation.net/", 
-    "version": "0.6", 
+    "homepage_url": "http://like-i-give-a.retromediation.net/", 
+    "version": "0.7", 
     "id": "eedoocpibiahbeojmfedhackomophemm", 
     "name": "Like I Give A F***"
 }
