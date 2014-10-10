@@ -1,4 +1,4 @@
-Like a give a Fuck
+Like a give a F***
 ==================
 
 Browser Plugin for Facebook
