@@ -1,0 +1,48 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  color: #222222;
+}
+
+.container {
+  width: 65%;
+  max-width: 700px;
+  min-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 3px;
+  border-top: 2px solid #EFEFEF;
+  border-bottom: 2px solid #EFEFEF;
+  padding: .2em 0;
+  font-size: 3em;
+}
+
+.content {
+  
+}
+
+.container img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.button {
+  transition: all 0.3s;
+  padding: 0.8em 1.2em;
+  background: #EFEFEF;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 2em 0;
+  display: inline-block;
+}
+
+.button:hover {
+  background: #DDDDDD;
+}
