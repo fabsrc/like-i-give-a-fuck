@@ -31,13 +31,13 @@ h1 {
   max-width: 300px;
 }
 
-.chrome .chrome-button,
-.firefox .firefox-button {
+.chrome .button-chrome,
+.firefox .button-firefox {
   background: #2ecc71;
 }
 
-.chrome .chrome-button:hover,
-.firefox .firefox-button:hover {
+.chrome .button-chrome:hover,
+.firefox .button-firefox:hover {
   background: #27ae60;
 }
 
