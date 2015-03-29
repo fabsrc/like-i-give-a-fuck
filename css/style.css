@@ -31,10 +31,20 @@ h1 {
   max-width: 300px;
 }
 
+.chrome .chrome-button,
+.firefox .firefox-button {
+  background: #2ecc71;
+}
+
+.chrome .chrome-button:hover,
+.firefox .firefox-button:hover {
+  background: #27ae60;
+}
+
 .button {
   transition: all 0.3s;
   padding: 0.8em 1.2em;
-  background: #EFEFEF;
+  background: #95a5a6;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
@@ -44,5 +54,5 @@ h1 {
 }
 
 .button:hover {
-  background: #DDDDDD;
+  background: #7f8c8d;
 }
