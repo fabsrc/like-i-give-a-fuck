@@ -5,15 +5,15 @@
 	<key>Author</key>
 	<string>Fabian Schneider</string>
 	<key>CFBundleDisplayName</key>
-	<string>Like I Give A F***</string>
+	<string>Like I Give A Fuck</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.kangoextensions.likeigiveafuck</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.7</string>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>0.7</string>
+	<string>1.0</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Database Quota</key>
@@ -50,7 +50,7 @@
 		</array>
 	</dict>
 	<key>Description</key>
-	<string>Changes every occurance of Facebook's 'Like' to 'Give a Fuck'</string>
+	<string>Changes every 'Like' to 'I Give a Fuck' on Facebook.com</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -66,6 +66,6 @@
 	<key>Update Manifest URL</key>
 	<string></string>
 	<key>Website</key>
-	<string>http://like-i-give-a.retromediation.net/</string>
+	<string>http://retromediation.net/</string>
 </dict>
 </plist>

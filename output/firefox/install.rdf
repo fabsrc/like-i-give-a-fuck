@@ -1,8 +1,8 @@
 <?xml version="1.0" ?><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
     <Description about="urn:mozilla:install-manifest">
         <em:id>{82CEEC65-D441-4F66-A31C-42DB4267155C}</em:id>
-        <em:name>Like I Give A F***</em:name>
-        <em:version>0.7</em:version>
+        <em:name>Like I Give A Fuck</em:name>
+        <em:version>1.0</em:version>
         <em:targetApplication>
             <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
@@ -11,9 +11,9 @@
             </Description>
         </em:targetApplication>
         <em:bootstrap>true</em:bootstrap>
-        <em:description>Changes every occurance of Facebook's 'Like' to 'Give a Fuck'</em:description>
+        <em:description>Changes every 'Like' to 'I Give a Fuck' on Facebook.com</em:description>
         <em:creator>Fabian Schneider</em:creator>
-        <em:homepageURL>http://like-i-give-a.retromediation.net/</em:homepageURL>
+        <em:homepageURL>http://retromediation.net/</em:homepageURL>
         <em:iconURL>chrome://kango-82ceec65-d441-4f66-a31c-42db4267155c/content/icons/icon32.png</em:iconURL>
         
         
