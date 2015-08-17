@@ -11,12 +11,18 @@ function hasClass (el, className) {
     return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
 }
 
-changeLikeLinks( document.querySelectorAll('.UFILikeLink') );
-changeLikeSentences( document.querySelectorAll('.UFILikeSentenceText') );
+function forEach(array, callback, scope) {
+  for (var i = 0; i < array.length; i++) {
+    callback.call(i, array[i]);
+  }
+}
+
+changeLikeLinks( document.getElementsByClassName('UFILikeLink') );
+changeLikeSentences( document.getElementsByClassName('UFILikeSentenceText') );
 changeBlingBoxes( document.querySelectorAll('.UFIBlingBoxText[data-reactid*=".$like"]') );
 
 function changeLikeLinks(links) {
-  Array.forEach(links, function(link) {
+  forEach(links, function(link) {
     if( link.getAttribute('data-ft') == '{"tn":">"}' ) {
       link.innerHTML = '<i class="UFILikeLinkIcon img sp_x63zNXV0TFa sx_b6360e"></i><span>I give a Fuck</span>';
     }
@@ -27,7 +33,7 @@ function changeLikeLinks(links) {
 }
 
 function changeLikeSentences(likeSentences) {
-  Array.forEach(likeSentences, function(likeSentence) {
+  forEach(likeSentences, function(likeSentence) {
     var likeSentenceSpan = likeSentence.children[0];
 
     if( likeSentenceSpan.children.length > 1 ) {
@@ -43,22 +49,21 @@ function changeLikeSentences(likeSentences) {
 }
 
 function changeBlingBoxes(blingBoxes) {
-  Array.forEach(blingBoxes, function(blingBox) {
+  forEach(blingBoxes, function(blingBox) {
     blingBox.innerHTML = blingBox.innerHTML.match(/\d*/)[0] + ' Fucks Given';
   });
 }
 
 var observer = new MutationObserver(function(mutations) {
-  Array.forEach(mutations, function(mutation) {
+  forEach(mutations, function(mutation) {
     if(mutation.attributeName === 'data-ft') {
       changeLikeLinks([mutation.target]);
     } else if(mutation.addedNodes.length > 0) {
-      Array.forEach(mutation.addedNodes, function(addedNode) {
-        // console.info(addedNode);
+      forEach(mutation.addedNodes, function(addedNode) {
         if(addedNode && hasClass(addedNode, 'UFILikeLink')) {
           changeLikeLinks([addedNode]);
         } else if(addedNode && (hasClass(addedNode, 'UFILikeSentence') || hasClass(addedNode, 'UFIList'))) {
-          changeLikeSentences( addedNode.querySelectorAll('.UFILikeSentenceText') );
+          changeLikeSentences( addedNode.getElementsByClassName('.UFILikeSentenceText') );
         } else if (addedNode && hasClass(addedNode, 'UFIBlingBox')) {
           changeBlingBoxes(addedNode.querySelectorAll('.UFIBlingBoxText[data-reactid*=".$like"]'));
         }
