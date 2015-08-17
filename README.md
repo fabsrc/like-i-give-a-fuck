@@ -1,12 +1,12 @@
-Like I give a Fuck
+Like I Give a Fuck
 ==================
 
-Browser Plugin for Facebook. 
-Changes every «Like» to «I give a fuck» on facebook.com
+Browser Plugin for Facebook.
+Changes every «Like» to «I give a fuck» on facebook.com.
 
 ### Technology
 
-Made with [jQuery](https://github.com/jquery/jquery) and [Kango](http://kangoextensions.com/).
+Created with [Kango](http://kangoextensions.com/).
 
 
 ### Installation
@@ -14,6 +14,6 @@ Made with [jQuery](https://github.com/jquery/jquery) and [Kango](http://kangoext
 Available on **[Firefox Addons](https://addons.mozilla.org/de/firefox/addon/like-i-give-a-fuck/)** and **[Google Chrome Webstore](https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf)**.
 
 
-#### Manual
+#### Manual Installation
 
 Just drag and drop the `output/likeagiveafuck_X.X.xpi` file for **Mozilla Firefox** or the `output/likeagiveafuck_X.X.crx` file for **Google Chrome** into your browser.
