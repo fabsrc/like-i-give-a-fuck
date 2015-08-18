@@ -63,7 +63,7 @@ var observer = new MutationObserver(function(mutations) {
         if(addedNode && hasClass(addedNode, 'UFILikeLink')) {
           changeLikeLinks([addedNode]);
         } else if(addedNode && (hasClass(addedNode, 'UFILikeSentence') || hasClass(addedNode, 'UFIList'))) {
-          changeLikeSentences( addedNode.getElementsByClassName('.UFILikeSentenceText') );
+          changeLikeSentences( addedNode.getElementsByClassName('UFILikeSentenceText') );
         } else if (addedNode && hasClass(addedNode, 'UFIBlingBox')) {
           changeBlingBoxes(addedNode.querySelectorAll('.UFIBlingBoxText[data-reactid*=".$like"]'));
         }
