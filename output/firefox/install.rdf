@@ -2,7 +2,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>{82CEEC65-D441-4F66-A31C-42DB4267155C}</em:id>
         <em:name>Like I Give A Fuck</em:name>
-        <em:version>1.0.3</em:version>
+        <em:version>1.0.4</em:version>
         <em:targetApplication>
             <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
