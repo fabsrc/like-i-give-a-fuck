@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.4</string>
+	<string>1.0.6</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.4</string>
+	<string>1.0.6</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Database Quota</key>
@@ -36,11 +36,7 @@
 		<dict>
 			<key>Start</key>
 			<array>
-				<string>includes/content_kango.js</string>
-				<string>kango/invoke_async.js</string>
-				<string>kango/message_target.js</string>
-				<string>kango/userscript_client.js</string>
-				<string>includes/content_init.js</string>
+				<string>includes/content.js</string>
 			</array>
 		</dict>
 		<key>Whitelist</key>
@@ -66,6 +62,6 @@
 	<key>Update Manifest URL</key>
 	<string></string>
 	<key>Website</key>
-	<string>http://retromediation.net/</string>
+	<string>http://fabsrc.github.io/like-i-give-a-fuck/</string>
 </dict>
 </plist>

@@ -13,7 +13,7 @@ function initStorage(n){var e=n;kango.storage={setItem:function(n,o,t){"undefine
 
 
 
-function initMessaging(){var e=[];chrome.runtime.onMessage.addListener(function(n,t){n.source=n.target=kango,"undefined"!=typeof n.tab&&(kango.tab.isPrivate=function(){return n.tab.isPrivate});for(var r=0;r<e.length;r++)e[r](n)}),kango.dispatchMessage=function(e,n){var t={name:e,data:n,origin:"tab",source:null,target:null};return chrome.runtime.sendMessage(t),!0},kango.addEventListener=function(n,t){if("message"==n){for(var r=0;r<e.length;r++)if(e[r]==t)return;e.push(t)}}}kango.browser={getName:function(){return"chrome"}},kango.io={getResourceUrl:function(e){return chrome.extension.getURL(e)}};
+function initMessaging(){var e=[];safari.self.addEventListener("message",function(a){for(var n={name:a.name,data:a.message,origin:"background",source:kango,target:kango},s=0;s<e.length;s++)e[s](n)}),kango.dispatchMessage=function(e,a){return safari.self.tab.dispatchMessage(e,a),!0},kango.addEventListener=function(a,n){if("message"==a){for(var s=0;s<e.length;s++)if(e[s]==n)return;e.push(n)}}}kango.browser={getName:function(){return"safari"}},kango.io={getResourceUrl:function(e){return safari.extension.baseURI+e}};
 function runContentScripts(n){var t=window==window.top;kango.invokeAsync("modules/kango/userscript_engine/getScripts",window.document.URL,n,t,function(t){object.forEach(t,function(t,o){kango.lang.evalScriptsInSandbox(window,t,o+"-"+n)})})}window.addEventListener("DOMContentLoaded",function(){apiReady.on(function(){runContentScripts("document-end")})},!1),apiReady.on(function(){runContentScripts("document-start")}),initApi();
 
 })();

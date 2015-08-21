@@ -13,7 +13,15 @@ function initStorage(n){var e=n;kango.storage={setItem:function(n,o,t){"undefine
 
 
 
-function initMessaging(){var e=[];chrome.runtime.onMessage.addListener(function(n,t){n.source=n.target=kango,"undefined"!=typeof n.tab&&(kango.tab.isPrivate=function(){return n.tab.isPrivate});for(var r=0;r<e.length;r++)e[r](n)}),kango.dispatchMessage=function(e,n){var t={name:e,data:n,origin:"tab",source:null,target:null};return chrome.runtime.sendMessage(t),!0},kango.addEventListener=function(n,t){if("message"==n){for(var r=0;r<e.length;r++)if(e[r]==t)return;e.push(t)}}}kango.browser={getName:function(){return"chrome"}},kango.io={getResourceUrl:function(e){return chrome.extension.getURL(e)}};
-function runContentScripts(n){var t=window==window.top;kango.invokeAsync("modules/kango/userscript_engine/getScripts",window.document.URL,n,t,function(t){object.forEach(t,function(t,o){kango.lang.evalScriptsInSandbox(window,t,o+"-"+n)})})}window.addEventListener("DOMContentLoaded",function(){apiReady.on(function(){runContentScripts("document-end")})},!1),apiReady.on(function(){runContentScripts("document-start")}),initApi();
+function initMessaging(){var e=[];safari.self.addEventListener("message",function(a){for(var n={name:a.name,data:a.message,origin:"background",source:kango,target:kango},s=0;s<e.length;s++)e[s](n)}),kango.dispatchMessage=function(e,a){return safari.self.tab.dispatchMessage(e,a),!0},kango.addEventListener=function(a,n){if("message"==a){for(var s=0;s<e.length;s++)if(e[s]==n)return;e.push(n)}}}kango.browser={getName:function(){return"safari"}},kango.io={getResourceUrl:function(e){return safari.extension.baseURI+e}};
+!function(n){function e(){var n=[],e=!1;this.onReady=function(i){e?i():n.push(i)},this.closeWindow=function(){},this.resizeWindow=function(n,e){},this.getBackgroundPage=function(){},this._fireReady=function(){var o=KangoAPI.getBackgroundPage();if(o){var t=KangoAPI._require("kango/utils").object;t.forEach(i(KangoAPI._require),function(n,e){window[e]=n})}for(var a=0;a<n.length;a++)n[a]();e=!0,delete this._fireReady,delete this._require,t&&t.freeze(this)}}var i=function(n){var e=n("kango/core").createApiInstance("popup");return"undefined"!=typeof window.addEventListener?window.addEventListener("unload",function(){e.clear()},!1):window.attachEvent("onunload",function(){e.clear()}),e.obj};n.KangoAPI=new e}(window);
+
+
+
+
+
+
+
+window.addEventListener("DOMContentLoaded",function(){if("undefined"!=typeof safari.extension.globalPage){var n=safari.extension.globalPage.contentWindow._kangoLoader.require;KangoAPI.getBackgroundPage=function(){return safari.extension.globalPage.contentWindow},KangoAPI.closeWindow=function(){n("kango-ui/browser_button").closePopup()},KangoAPI.resizeWindow=function(n,e){safari.self.width=n,safari.self.height=e},KangoAPI._require=function(e){return n(e)}}else initApi(),KangoAPI.closeWindow=function(){window.close()};KangoAPI._fireReady()},!1);
 
 })();
