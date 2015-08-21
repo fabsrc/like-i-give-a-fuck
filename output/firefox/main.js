@@ -17,9 +17,6 @@ function forEach(array, callback, scope) {
   }
 }
 
-var iconClass = document.getElementsByClassName('UFILikeLinkIcon').item(0).classList.item(2) + ' ' +
-  document.getElementsByClassName('UFILikeLinkIcon').item(0).classList.item(3);
-
 changeLikeLinks( document.getElementsByClassName('UFILikeLink') );
 changeLikeSentences( document.getElementsByClassName('UFILikeSentenceText') );
 changeBlingBoxes( document.querySelectorAll('.UFIBlingBoxText[data-reactid*=".$like"]') );
@@ -27,12 +24,7 @@ changeBlingBoxes( document.querySelectorAll('.UFIBlingBoxText[data-reactid*=".$l
 
 function changeLikeLinks(links) {
   forEach(links, function(link) {
-    if( link.getAttribute('data-ft') == '{"tn":">"}' ) {
-      link.innerHTML = '<i class="UFILikeLinkIcon img ' + iconClass + '"></i><span>I give a Fuck</span>';
-    }
-    else if( link.getAttribute('data-ft') == '{"tn":"?"}' ) {
-      link.innerHTML = '<i class="UFILikeLinkIcon img ' + iconClass + '"></i><span>I give a Fuck</span>';
-    }
+    link.children[1].textContent = 'I give a Fuck';
   });
 }
 
