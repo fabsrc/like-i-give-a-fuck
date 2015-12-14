@@ -25,13 +25,13 @@ changeLikeSentences( document.getElementsByClassName('UFILikeSentenceText') );
 
 function changeLikeLinks(links) {
   forEach(links, function(link) {
-    link.textContent = 'I give a Fuck';
+    link.textContent = 'I give a fuck';
   });
 }
 
 function changeBlingLinks(links) {
   forEach(links, function(link) {
-    link.children[0].innerHTML = link.children[0].innerHTML.match(/\d*/)[0] + ' Fucks Given';
+    link.children[0].innerHTML = link.children[0].innerHTML.match(/\d*/)[0] + ' fucks given';
   });
 }
 
