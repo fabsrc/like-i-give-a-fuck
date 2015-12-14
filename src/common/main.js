@@ -17,14 +17,21 @@ function forEach(array, callback, scope) {
   }
 }
 
+
 changeLikeLinks( document.getElementsByClassName('UFILikeLink') );
+changeBlingLinks( document.querySelectorAll('[data-comment-prelude-ref="action_link_bling"]') );
 changeLikeSentences( document.getElementsByClassName('UFILikeSentenceText') );
-changeBlingBoxes( document.querySelectorAll('.UFIBlingBoxText[data-reactid*=".$like"]') );
 
 
 function changeLikeLinks(links) {
   forEach(links, function(link) {
-    link.children[1].textContent = 'I give a Fuck';
+    link.textContent = 'I give a Fuck';
+  });
+}
+
+function changeBlingLinks(links) {
+  forEach(links, function(link) {
+    link.children[0].innerHTML = link.children[0].innerHTML.match(/\d*/)[0] + ' Fucks Given';
   });
 }
 
@@ -33,7 +40,7 @@ function changeLikeSentences(likeSentences) {
     var likeSentenceSpan = likeSentence.children[0];
 
     if( likeSentenceSpan.children.length > 1 ) {
-      if( likeSentenceSpan.children.length == 2 && hasClass(likeSentenceSpan, 'profileLink') ) {
+      if( likeSentenceSpan.children.length == 2 && hasClass(likeSentenceSpan.children[0], 'profileLink') ) {
         likeSentenceSpan.children[likeSentenceSpan.children.length-1].textContent = ' gives a fuck.';
       } else {
         likeSentenceSpan.children[likeSentenceSpan.children.length-1].textContent = ' give a fuck.';
@@ -44,24 +51,17 @@ function changeLikeSentences(likeSentences) {
   });
 }
 
-function changeBlingBoxes(blingBoxes) {
-  forEach(blingBoxes, function(blingBox) {
-    blingBox.innerHTML = blingBox.innerHTML.match(/\d*/)[0] + ' Fucks Given';
-  });
-}
 
 var observer = new MutationObserver(function(mutations) {
   forEach(mutations, function(mutation) {
-    if(mutation.attributeName === 'data-ft') {
-      changeLikeLinks([mutation.target]);
-    } else if(mutation.addedNodes.length > 0) {
+    if(mutation.type === 'childList' && mutation.addedNodes.length > 0) {
       forEach(mutation.addedNodes, function(addedNode) {
-        if(addedNode && hasClass(addedNode, 'UFILikeLink')) {
+        if (addedNode && hasClass(addedNode, 'UFILikeLink')) {
           changeLikeLinks([addedNode]);
-        } else if(addedNode && (hasClass(addedNode, 'UFILikeSentence') || hasClass(addedNode, 'UFIList'))) {
+        } else if (addedNode && hasClass(addedNode, 'UFIList')) {
           changeLikeSentences( addedNode.getElementsByClassName('UFILikeSentenceText') );
-        } else if (addedNode && hasClass(addedNode, 'UFIBlingBox')) {
-          changeBlingBoxes(addedNode.querySelectorAll('.UFIBlingBoxText[data-reactid*=".$like"]'));
+        } else if (addedNode && addedNode.hasAttribute('data-comment-prelude-ref')) {
+          changeBlingLinks([addedNode]);
         }
       });
     }
