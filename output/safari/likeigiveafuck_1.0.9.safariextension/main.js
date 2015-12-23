@@ -1,7 +1,6 @@
 // ==UserScript==
 // @name Like I Give A Fuck
-// @include http://*.facebook.*
-// @include https://*.facebook.*
+// @include *://*.facebook.com/*
 // ==/UserScript==
 
 function hasClass (el, className) {
@@ -25,13 +24,13 @@ changeLikeSentences( document.getElementsByClassName('UFILikeSentenceText') );
 
 function changeLikeLinks(links) {
   forEach(links, function(link) {
-    link.textContent = 'I give a fuck';
+    link.textContent = 'Give a fuck';
   });
 }
 
 function changeBlingLinks(links) {
   forEach(links, function(link) {
-    link.children[0].innerHTML = link.children[0].innerHTML.match(/\d*/)[0] + ' fucks given';
+    link.children[0].textContent = link.children[0].textContent.match(/\d*/)[0] + ' Fucks given';
   });
 }
 
@@ -60,13 +59,14 @@ var observer = new MutationObserver(function(mutations) {
           changeLikeLinks([addedNode]);
         } else if (addedNode && hasClass(addedNode, 'UFIList')) {
           changeLikeSentences( addedNode.getElementsByClassName('UFILikeSentenceText') );
-        } else if (addedNode && addedNode.hasAttribute('data-comment-prelude-ref')) {
+        } else if (addedNode && addedNode.hasAttribute && addedNode.hasAttribute('data-comment-prelude-ref')) {
           changeBlingLinks([addedNode]);
         }
       });
     }
   });
 });
+
 
 var target = document.querySelector('body');
 var config = { childList: true, attributes: true, characterData: true, subtree: true };

@@ -1,7 +1,7 @@
 {
     "name": "Like I Give A Fuck",
-    "version": "1.0.8",
-    "description": "Changes every 'Like' to 'I give a fuck' on facebook.com",
+    "version": "1.0.9",
+    "description": "Changes every occurrence of 'Like' to 'Give a fuck' on Facebook",
     "creator": "Fabian Schneider",
     "homepage_url": "http://fabsrc.github.io/like-i-give-a-fuck/",
     "content_scripts": [

@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.8</string>
+	<string>1.0.9</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.8</string>
+	<string>1.0.9</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Database Quota</key>
@@ -46,7 +46,7 @@
 		</array>
 	</dict>
 	<key>Description</key>
-	<string>Changes every 'Like' to 'I Give a Fuck' on facebook.com</string>
+	<string>Changes every occurrence of 'Like' to 'Give a fuck' on Facebook</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>

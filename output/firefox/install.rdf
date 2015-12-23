@@ -2,7 +2,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>{82CEEC65-D441-4F66-A31C-42DB4267155C}</em:id>
         <em:name>Like I Give A Fuck</em:name>
-        <em:version>1.0.8</em:version>
+        <em:version>1.0.9</em:version>
         <em:targetApplication>
             <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
@@ -11,7 +11,7 @@
             </Description>
         </em:targetApplication>
         <em:bootstrap>true</em:bootstrap>
-        <em:description>Changes every 'Like' to 'I Give a Fuck' on facebook.com</em:description>
+        <em:description>Changes every occurrence of 'Like' to 'Give a fuck' on Facebook</em:description>
         <em:creator>Fabian Schneider</em:creator>
         <em:homepageURL>http://fabsrc.github.io/like-i-give-a-fuck/</em:homepageURL>
         <em:iconURL>chrome://kango-82ceec65-d441-4f66-a31c-42db4267155c/content/icons/icon32.png</em:iconURL>
