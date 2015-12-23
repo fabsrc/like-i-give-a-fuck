@@ -13,13 +13,13 @@ Available on **[Firefox Addons](https://addons.mozilla.org/de/firefox/addon/like
 
 **Mozilla Firefox**
 > 1. Download the `output/like-i-give-a-fuck-X.X.xpi` file
-> 2. Drag and drop the file into your browser
+> 2. Drag and drop the file into your browser window
 
 
 **Google Chrome**
 > 1. Download the `output/like-i-give-a-fuck-X.X` folder
 > 2. Go to [chrome://extensions](chrome://extensions) in your Chrome browser
-> 3. Drag and drop the Folder into your browser window
+> 3. Drag and drop the folder into your browser window
 >
 > Alternatively read here how to [install extensions in Chrome](https://developer.chrome.com/extensions/getstarted#unpacked)
 
@@ -35,7 +35,7 @@ Built with [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtens
 	npm install
 	```
 
-2. Run gulp to build the extensions
+2. Run gulp to build the extensions for Mozilla Firefox and Google Chrome
 
 	```bash
 	gulp
