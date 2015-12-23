@@ -1,18 +1,47 @@
-Like I Give a Fuck
-==================
+## Like I Give a Fuck
 
-Browser Plugin for Facebook.
-Changes every «Like» to «I give a fuck» on facebook.com.
+*A Browser Extension for Facebook*
+
+Uses JavaScript to change every "Like" button and text field to "Give a fuck" on facebook.com.
 
 ### Installation
 
-Available on **[Firefox Addons](https://addons.mozilla.org/de/firefox/addon/like-i-give-a-fuck/)** and **[Google Chrome Webstore](https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf)**.
+Available on **[Firefox Addons](https://addons.mozilla.org/de/firefox/addon/like-i-give-a-fuck/)** and **[Google Chrome Webstore](https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf)**
 
 
-**Manual Installation**
+#### Manual Installation
 
-Just drag and drop the `output/likeagiveafuck_X.X.xpi` file for **Mozilla Firefox** or the `output/likeagiveafuck_X.X.crx` file for **Google Chrome** into your browser.
+**Mozilla Firefox**
+> 1. Download the `output/like-i-give-a-fuck-X.X.xpi` file
+> 2. Drag and drop the file into your browser
+
+
+**Google Chrome**
+> 1. Download the `output/like-i-give-a-fuck-X.X` folder
+> 2. Go to [chrome://extensions](chrome://extensions) in your Chrome browser
+> 3. Drag and drop the Folder into your browser window
+>
+> Alternatively read here how to [install extensions in Chrome](https://developer.chrome.com/extensions/getstarted#unpacked)
 
 ### Technology
 
-Created with [Kango](http://kangoextensions.com/).
+Built with [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) for Mozilla Firefox and GoogleChrome.
+
+### Development
+
+1. Install development dependencies
+
+	```bash
+	npm install
+	```
+
+2. Run gulp to build the extensions
+
+	```bash
+	gulp
+	```
+
+
+### License
+
+Copyright (c) 2015. Licensed under the [WTFPL](http://www.wtfpl.net/) license.
