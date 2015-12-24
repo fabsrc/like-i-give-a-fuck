@@ -3,8 +3,8 @@ var templateButton  = document.getElementById('button-template').innerHTML;
 var templatePost    = document.getElementById('post-template').innerHTML;
 
 var urls = {
-    'firefox': 'https://addons.mozilla.org/firefox/downloads/file/375265/like_i_give_a_fuck-1.0.8-fx.xpi?src=ss',
-    'chrome': 'https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf'
+    'firefox'  :  'https://addons.mozilla.org/firefox/downloads/file/379628/like_i_give_a_fuck-1.0.9-fx.xpi?src=dp-btn-primary',
+    'chrome'   :  'https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf'
 };
 
 if (browser && (browser === 'firefox' || browser === 'chrome')) {
