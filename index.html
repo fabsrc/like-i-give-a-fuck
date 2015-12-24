@@ -1,49 +1,95 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Like I Give A F$#% - Browser Plugin for Facebook</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700|Montserrat:700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Like I Give A F$#%</title>
+    <meta name="description" content="A Browser Extension for Facebook">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
 
-        <!-- Like I Give A F$#% -->
-        <div class="container">
-            <img src="icon.svg">
-            <div class="content">
-                <h1>Like I Give a Fuck</h1>
-                <p><strong>Browser Plugin for Facebook</strong></p>
-                <p>Every day millions of «likes» are given on Facebook. But how many people actually like what they «like» on Facebook?</p> 
-                <p>«Liking» something has become a synonym for acknowledging something. You either «like» or you don't care – to say it in other words: you give a fuck or you don't give a fuck.</p>
-                <p>This browser plugin fixes the mismatch of «Like« and «care» by changing every occurance of «Like» on  facebook.com to «I give a Fuck».</p>
-                <p>
-                    <!--<a href="#" class="btn btn-download firefox">Download for Firefox</a>
-                    <a href="#" class="btn btn-download chrome">Download for Chrome</a>
-                    <a href="#" class="btn btn-download ie">Download for IE</a>-->
-                    <a class="button" href="https://github.com/fabsrc/like-i-give-a-fuck">Get it on Github now</a>
-                </p>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="page-container">
+      <aside class="page-sidebar">
+        <div class="info-section">
+          <img class="logo" src="img/icon.svg">
+          <h1 class="title">Like I Give a Fuck</h1>
+          <p class="description">A Browser Extension for Facebook</p>
+          <div class="download-section">
+            <div id="download-button">
+              <a class="primary-button" href="https://github.com/fabsrc/like-i-give-a-fuck"><i class="fa fa-download"></i> Download</a>
             </div>
+            <a class="alternative-download" href="https://github.com/fabsrc/like-i-give-a-fuck/archive/master.zip">Download Source</a>
+          </div>
         </div>
+        <footer class="side-footer">
+          <a aria-label="Star fabsrc/like-i-give-a-fuck on GitHub" data-icon="octicon-star" href="https://github.com/fabsrc/like-i-give-a-fuck" class="github-button">Star</a>
+          <a aria-label="Fork fabsrc/like-i-give-a-fuck on GitHub" data-icon="octicon-repo-forked" href="https://github.com/fabsrc/like-i-give-a-fuck/fork" class="github-button">Fork</a>
+          <a aria-label="Issue fabsrc/like-i-give-a-fuck on GitHub" href="https://github.com/fabsrc/like-i-give-a-fuck/issues" class="github-button">Issue</a>
+        </footer>
+      </aside>
+      <div class="main-content">
+        <h2>Improve your Like Experience on Facebook</h2>
+        <p>Every day millions of "likes" are given on Facebook. But how many people really like what they "like" on Facebook? "Liking" has become a synonym for acknowledging something. You either "like" or you don't care – to say it in other words: either you give a fuck or you don't. This browser extension fixes the mismatch of "like" and like by changing every occurance of "Like" to "Give a Fuck" on Facebook.</p>
+        <h3>Example</h3>
+        <p id="post-example" class="post-example"></p>
 
-        <script src="js/bowser.js"></script>
-        <script src="js/main.js"></script>
-        <script>
-          (function() {
+        <h3>Privacy</h3>
+        <p>This extension will not record, collect, log or store any of your facebook data. You can check out the <a href="https://github.com/fabsrc/like-i-give-a-fuck">source code on <i class="fa fa-github"></i> Github.</a></p>
 
-          if (document.body.classList)
-            document.body.classList.add(bowser.name.toLowerCase());
-          else
-            document.body.className += ' ' + bowser.name.toLowerCase();
+        <footer class="page-footer">
+          <p>Copyright © <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/fabsrc">Fabian Schneider</a>. Licensed under the <a href="http://wtfpl.net/">WTFPL</a> license.</p>
+          <p>Built with <a href="https://mustache.github.io/">Mustache</a>, <a href="https://github.com/mzabriskie/axios">Axios</a> &amp; <a href="https://github.com/ded/bowser">Bowser</a>. Example data by <a href="http://hipsterjesus.com/">Hipsterjesus</a> &amp; <a href="https://randomuser.me/">Random User Generator</a>.</p>
+        </footer>
 
-          })();
-        </script>
+      </div>
+    </div>
 
-    </body>
+    <script id="button-template" type="text/template">
+      <a class="primary-button -{{ browser }}" href="{{ url }}"><i class="fa fa-{{ browser }}"></i>Install</a>
+    </script>
+
+    <script id="post-template" type="text/template">
+      <div class="facebook-post">
+        <header class="post-header cf">
+          <img class="picture" src="{{ picture }}">
+          <div class="post-info">
+            <div><a href="#" class="author">{{ author }}</a></div>
+            <div class="info"><span class="timestamp">{{ timestamp }}</span> • <span class="location">{{ location }}</span></div>
+          </div>
+        </header>
+        <div class="post-content">
+          <p>{{ content }}</p>
+        </div>
+        <footer class="post-footer">
+          <div class="post-data">
+            <span class="data likes">{{ likes }} Fucks given</span>
+            <span class="data comments">{{ comments }} Comments</span>
+            <span class="data shares">{{ shares }} Shares</span>
+          </div>
+          <div class="action-section">
+            <span class="action like {{#liked}} -active {{/liked}}"><a href="#">Give a fuck</a></span>
+            <span class="action comment"><a href="#">Comment</a></span>
+            <span class="action share"><a href="#">Share</a></span>
+          </div>
+          <div class="comment-section">
+            <div class="like-sentence"><span class="subject">{{ likes }} people</span> give a fuck.</div>
+          </div>
+        </footer>
+      </div>
+    </script>
+
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.0.0/bowser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.8.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

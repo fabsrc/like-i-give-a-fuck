@@ -1,4 +1,6 @@
-Like I Give a F$#%
+Like I Give a Fuck
 ==================
 
-Like I  Give a F$#% - Browser Plugin for Facebook
+> A Browser Extension for Facebook
+> 
+> http://fabsrc.github.io/like-i-give-a-fuck

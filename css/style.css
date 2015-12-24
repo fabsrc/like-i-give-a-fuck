@@ -1,48 +1,361 @@
-body {
-  font-family: 'Roboto Slab', serif;
-  color: #222222;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
-.container {
-  width: 65%;
-  max-width: 700px;
-  min-width: 300px;
-  margin: auto;
-  text-align: center;
+p,
+img,
+div,
+html,
+body,
+form,
+label,
+legend,
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f5f5;
+    color: #222;
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 3px;
-  border-top: 2px solid #EFEFEF;
-  border-bottom: 2px solid #EFEFEF;
-  padding: .2em 0;
-  font-size: 3em;
+    font-family: 'Amatic SC', cursive;
+    font-size: 36px;
+    font-weight: bold;
 }
 
-.content {
-  
+h2,
+h3 {
+    margin: 1em 0 .5em;
 }
 
-.container img {
-  width: 100%;
-  max-width: 300px;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.button {
-  transition: all 0.3s;
-  padding: 0.8em 1.2em;
-  background: #EFEFEF;
-  color: black;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin: 2em 0;
-  display: inline-block;
+a:hover {
+    color: #222;
 }
 
-.button:hover {
-  background: #DDDDDD;
+p {
+    line-height: 1.5;
+}
+
+p + p {
+    margin-top: .4em;
+}
+
+
+
+.cf:before,
+.cf:after {
+    content: ' ';
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.page-container {
+    height: 100%;
+}
+
+.page-sidebar {
+    background: #fff;
+    display: flex;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 320px;
+    z-index: 0;
+}
+
+.info-section {
+    align-self: center;
+    text-align: center;
+    width: 100%;
+}
+
+.side-footer {
+    bottom: 30px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.logo {
+    background: #f5f5f5;
+    border-radius: 50%;
+    padding: 15px;
+    width: 80px;
+}
+
+.title {
+    letter-spacing: 2px;
+    margin: 15px;
+    text-transform: uppercase;
+}
+
+.description {
+    color: #999;
+    font-size: 12px;
+}
+
+.download-section {
+    margin-top: 60px;
+}
+
+.primary-button {
+    background: transparent;
+    border: 1px solid #d5d5d5;
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 13px 28px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all .35s;
+}
+
+.primary-button .fa {
+    margin-right: 7px;
+}
+
+.primary-button:after {
+    background-color: #3b5998;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: height .35s;
+    width: 100%;
+    z-index: -1;
+}
+
+.primary-button.-firefox:after {
+    background-color: #e66000;
+}
+
+.primary-button.-chrome:after {
+    background-color: #4285f4;
+}
+
+.primary-button:hover,
+.primary-button:active,
+.primary-button:focus {
+    border-color: #3b5998;
+    color: #fff;
+}
+
+.primary-button.-firefox:hover,
+.primary-button.-firefox:active,
+.primary-button.-firefox:focus {
+    border-color: #e66000;
+}
+
+.primary-button.-chrome:hover,
+.primary-button.-chrome:active,
+.primary-button.-chrome:focus {
+    border-color: #4285f4;
+}
+
+.primary-button:hover:after,
+.primary-button:active:after,
+.primary-button:focus:after {
+    height: 100%;
+}
+
+.alternative-download {
+    color: #ddd;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 15px;
+    transition: all .2s;
+}
+
+.alternative-download:hover,
+.alternative-download:active,
+.alternative-download:focus {
+    color: #999;
+}
+
+.main-content {
+    margin-left: 320px;
+    padding: 60px 60px 30px;
+}
+
+.main-content a {
+    font-weight: bold;
+}
+
+.main-content a:hover {
+    color: #999;
+}
+
+.post-example {
+    min-height: 320px;
+}
+
+.facebook-post {
+    background: #fff;
+    border: 1px solid #d0d1d5;
+    border-radius: 3px;
+    color: #141823;
+    font-family: helvetica,arial,sans-serif;
+    font-size: 14px;
+    max-width: 500px;
+    min-width: 250px;
+    padding: 12px 12px 0 12px;
+}
+
+.post-header {
+    margin-bottom: 11px;
+}
+
+.post-header .picture {
+    float: left;
+    height: 40px;
+    margin-right: 8px;
+    width: 40px;
+}
+
+.post-info .author {
+    color: #3b5998;
+    font-weight: bold;
+    line-height: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.post-info .author:hover {
+    text-decoration: underline;
+}
+
+.post-info .info {
+    color: #9197a3;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.post-info .info .location {
+    text-transform: capitalize;
+}
+
+.post-content {
+    line-height: 19px;
+}
+
+.post-data {
+    color: #9197a3;
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.post-data .data {
+    cursor: pointer;
+}
+
+.post-data .data + .data {
+    margin-left: 3px;
+}
+
+.action-section {
+    border-top: 1px solid #e5e5e5;
+    color: #7f7f7f;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 8px 0;
+}
+
+.action-section .action + .action {
+    margin-left: 25px;
+}
+
+.action-section .action a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.action-section .action.-active,
+.action-section .action.-active:before {
+    color: #5890ff;
+}
+
+.action-section .action:before {
+    color: #afb4bd;
+    font-family: FontAwesome;
+    font-size: 14px;
+    margin-right: 6px;
+}
+
+.action-section .like:before {
+    content: '\f164';
+}
+
+.action-section .comment:before {
+    content: '\f075';
+}
+
+.action-section .share:before {
+    content: '\f064';
+}
+
+.comment-section {
+    background: #f6f7f8;
+    border-top: 1px solid #e1e2e3;
+    margin: 0 -12px;
+    padding: 0 12px;
+}
+
+.like-sentence {
+    font-size: 12px;
+    padding: 10px 0 8px;
+}
+
+.like-sentence .subject {
+    color: #3b5998;
+    cursor: pointer;
+}
+
+.page-footer {
+    border-top: 1px solid #ddd;
+    color: #999;
+    font-size: 12px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.page-footer a {
+    color: inherit;
+    font-weight: normal;
+}
+
+.page-footer a:hover {
+    color: #222;
+}
+
+@media only screen and (max-width: 800px) {
+    .page-sidebar {
+        padding: 50px 0 100px;
+        position: relative;
+        width: 100%;
+    }
+
+    .main-content {
+        margin: 0;
+        padding: 20px 50px;
+    }
 }
