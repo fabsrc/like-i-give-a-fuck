@@ -27,7 +27,9 @@ function changeLikeLinks(links) {
 
 function changeBlingLinks(links) {
   forEach(links, (link) => {
-    link.children[0].textContent = link.children[0].textContent.match(/\d*/)[0] + ' Fucks given';
+    if (link.children.length > 0) {
+      link.children[0].textContent = link.children[0].textContent.match(/\d*/)[0] + ' Fucks given';
+    }
   });
 }
 
@@ -52,12 +54,13 @@ var observer = new MutationObserver((mutations) => {
   forEach(mutations, (mutation) => {
     if(mutation.type === 'childList' && mutation.addedNodes.length > 0) {
       forEach(mutation.addedNodes, (addedNode) => {
-        if (addedNode && hasClass(addedNode, 'UFILikeLink')) {
-          changeLikeLinks([addedNode]);
-        } else if (addedNode && hasClass(addedNode, 'UFIList')) {
-          changeLikeSentences( addedNode.getElementsByClassName('UFILikeSentenceText') );
-        } else if (addedNode && addedNode.hasAttribute && addedNode.hasAttribute('data-comment-prelude-ref')) {
-          changeBlingLinks([addedNode]);
+        if (addedNode.hasAttribute && addedNode.hasAttribute('data-reactroot')) {
+          if (hasClass(addedNode, 'UFIList')) {
+            changeLikeSentences( addedNode.getElementsByClassName('UFILikeSentenceText') );
+          } else {
+            changeLikeLinks(addedNode.getElementsByClassName('UFILikeLink'));
+            changeBlingLinks(addedNode.querySelectorAll('[data-comment-prelude-ref="action_link_bling"]'));
+          }
         }
       });
     }
