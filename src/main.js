@@ -20,7 +20,7 @@ changeLikeSentences( document.getElementsByClassName('UFILikeSentenceText') );
 
 
 function changeLikeLinks(links) {
-  forEach(links, function(link) {
+  forEach(links, (link) => {
     link.textContent = 'Give a fuck';
   });
 }

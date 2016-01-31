@@ -1,11 +1,11 @@
 {
   "name": "like-i-give-a-fuck",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A Browser Extension for Facebook",
   "homepage": "http://fabsrc.github.io/like-i-give-a-fuck",
   "author": "Fabian Schneider",
   "license": "WTFPL",
-  "keywords": ["chrome", "firefox", "extension", "facebook"],
+  "keywords": ["chrome", "firefox", "extension", "facebook", "webextension"],
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/fabsrc/like-i-give-a-fuck.git"
