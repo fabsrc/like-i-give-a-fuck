@@ -6,7 +6,7 @@ Uses JavaScript to change every "Like" button and text field to "Give a fuck" on
 
 ## Installation
 
-Available on **[Firefox Addons](https://addons.mozilla.org/de/firefox/addon/like-i-give-a-fuck/)** and **[Google Chrome Webstore](https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf)**
+Available on **[Firefox Addons](https://addons.mozilla.org/de/firefox/addon/like-i-give-a-fuck/)** and **[Google Chrome Webstore](https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf)**.
 
 
 ### Manual Installation
@@ -32,16 +32,16 @@ Built with [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtens
 1. Install development dependencies
 
 	```bash
-	npm install
+	$ npm install
 	```
 
 2. Run gulp to build the extensions for Mozilla Firefox and Google Chrome
 
 	```bash
-	gulp
+	$ gulp
 	```
 
 
 ## License
 
-Copyright (c) 2015. Licensed under the [WTFPL](http://www.wtfpl.net/) license.
+Copyright (c) 2016. Licensed under the [WTFPL](http://www.wtfpl.net/) license.
