@@ -3,7 +3,7 @@ var templateButton  = document.getElementById('button-template').innerHTML;
 var templatePost    = document.getElementById('post-template').innerHTML;
 
 var urls = {
-    'firefox'  :  'https://addons.mozilla.org/firefox/downloads/file/379628/like_i_give_a_fuck-1.0.9-fx.xpi?src=dp-btn-primary',
+    'firefox'  :  'https://addons.mozilla.org/de/firefox/addon/like-i-give-a-fuck/',
     'chrome'   :  'https://chrome.google.com/webstore/detail/like-i-give-a-f/ohfpnpgiljfbmnibfpoieckbmhaagogf'
 };
 
