@@ -16,7 +16,7 @@ axios.all([
     axios.get('https://randomuser.me/api/'),
     axios.get('http://hipsterjesus.com/api?html=false&paras=1')
 ]).then(axios.spread(function (userData, textData) {
-    var user         = userData.data.results[0].user;
+    var user         = userData.data.results[0];
     var templateData =
     {
         author     :  user.name.first + ' ' + user.name.last,
