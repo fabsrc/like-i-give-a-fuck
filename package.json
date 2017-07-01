@@ -1,30 +1,32 @@
 {
   "name": "like-i-give-a-fuck",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A Browser Extension for Facebook",
   "homepage": "http://fabsrc.github.io/like-i-give-a-fuck",
   "author": "Fabian Schneider",
   "license": "WTFPL",
-  "keywords": ["chrome", "firefox", "extension", "facebook", "webextension"],
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/fabsrc/like-i-give-a-fuck.git"
+  "keywords": [
+    "chrome",
+    "firefox",
+    "extension",
+    "facebook",
+    "webextension"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabsrc/like-i-give-a-fuck.git"
   },
   "bugs": {
-    "url" : "https://github.com/fabsrc/like-i-give-a-fuck/issues"
+    "url": "https://github.com/fabsrc/like-i-give-a-fuck/issues"
+  },
+  "scripts": {
+    "build": "gulp"
   },
   "devDependencies": {
-    "babel-core": "^6.3.21",
-    "babel-preset-es2015": "^6.3.13",
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-filter": "^3.0.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-filter": "^5.0.0",
     "gulp-json-editor": "^2.2.1",
-    "gulp-zip": "^3.0.2"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "gulp-zip": "^4.0.0"
   }
 }

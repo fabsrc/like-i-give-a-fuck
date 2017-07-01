@@ -1,15 +1,13 @@
-'use strict'
+const del = require('del')
+const gulp = require('gulp')
+const zip = require('gulp-zip')
+const gulpFilter = require('gulp-filter')
+const jsonEditor = require('gulp-json-editor')
+const pkg = require('./package.json')
 
-import del          from 'del'
-import gulp         from 'gulp'
-import zip          from 'gulp-zip'
-import gulpFilter   from 'gulp-filter'
-import jsonEditor   from 'gulp-json-editor'
-import config       from './package.json'
-
-let src = 'src/**/*'
-let output = 'output/'
-let target = 'like-i-give-a-fuck-' + config.version
+const src = 'src/**/*'
+const output = 'output/'
+const target = 'like-i-give-a-fuck-' + pkg.version
 
 gulp.task('clean', () => {
   return del.sync([output + '**/*'])
@@ -22,7 +20,7 @@ gulp.task('build:firefox', () => {
 })
 
 gulp.task('build:chrome', () => {
-  let filter = gulpFilter(['*.json'], { restore: true })
+  const filter = gulpFilter(['*.json'], { restore: true })
 
   gulp.src(src)
       .pipe(filter)

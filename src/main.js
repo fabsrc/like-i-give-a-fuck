@@ -54,13 +54,12 @@ var observer = new MutationObserver((mutations) => {
   forEach(mutations, (mutation) => {
     if(mutation.type === 'childList' && mutation.addedNodes.length > 0) {
       forEach(mutation.addedNodes, (addedNode) => {
-        if (addedNode.hasAttribute && addedNode.hasAttribute('data-reactroot')) {
-          if (hasClass(addedNode, 'UFIList')) {
-            changeLikeSentences( addedNode.getElementsByClassName('UFILikeSentenceText') );
-          } else {
-            changeLikeLinks(addedNode.getElementsByClassName('UFILikeLink'));
-            changeBlingLinks(addedNode.querySelectorAll('[data-comment-prelude-ref="action_link_bling"]'));
-          }
+        if (addedNode.getElementsByClassName) {
+          changeLikeLinks( addedNode.getElementsByClassName('UFILikeLink') );
+          changeLikeSentences( addedNode.getElementsByClassName('UFILikeSentenceText') );
+        }
+        if (addedNode.querySelectorAll) {
+          changeBlingLinks( addedNode.querySelectorAll('[data-comment-prelude-ref="action_link_bling"]') );
         }
       });
     }

@@ -44,4 +44,4 @@ Built with [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtens
 
 ## License
 
-Copyright (c) 2016. Licensed under the [WTFPL](http://www.wtfpl.net/) license.
+Licensed under the [WTFPL](http://www.wtfpl.net/) license.
