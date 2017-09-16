@@ -14,7 +14,7 @@ if (browser && (browser === 'firefox' || browser === 'chrome')) {
 
 axios.all([
     axios.get('https://randomuser.me/api/'),
-    axios.get('http://hipsterjesus.com/api?html=false&paras=1')
+    axios.get('https://baconipsum.com/api/?type=meat-and-filler')
 ]).then(axios.spread(function (userData, textData) {
     var user         = userData.data.results[0];
     var templateData =
@@ -22,7 +22,7 @@ axios.all([
         author     :  user.name.first + ' ' + user.name.last,
         picture    :  user.picture.thumbnail,
         location   :  user.location.city,
-        content    :  textData.data.text,
+        content    :  textData.data[0],
         liked      :  Math.random() >= 0.5,
         timestamp  :  Math.floor((Math.random() * 50) + 1) + ' mins',
         likes      :  Math.floor((Math.random() * 1000) + 1),
