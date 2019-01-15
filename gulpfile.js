@@ -10,11 +10,11 @@ const output = 'output/'
 const target = 'like-i-give-a-fuck-' + pkg.version
 
 gulp.task('clean', () => {
-  return del.sync([output + '**/*'])
+  return del([output + '**/*'])
 })
 
 gulp.task('build:firefox', () => {
-  gulp.src(src)
+  return gulp.src(src)
       .pipe(zip(target + '.xpi'))
       .pipe(gulp.dest(output))
 })
@@ -22,7 +22,7 @@ gulp.task('build:firefox', () => {
 gulp.task('build:chrome', () => {
   const filter = gulpFilter(['*.json'], { restore: true })
 
-  gulp.src(src)
+  return gulp.src(src)
       .pipe(filter)
       .pipe(jsonEditor((json) => {
         delete json.applications
@@ -34,5 +34,4 @@ gulp.task('build:chrome', () => {
       .pipe(gulp.dest(output))
 })
 
-gulp.task('build', ['clean', 'build:firefox', 'build:chrome'])
-gulp.task('default', ['build'])
+gulp.task('default', gulp.series('clean', gulp.parallel('build:firefox', 'build:chrome')))

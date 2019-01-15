@@ -1,6 +1,6 @@
 {
   "name": "like-i-give-a-fuck",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "description": "A Browser Extension for Facebook",
   "homepage": "http://fabsrc.github.io/like-i-give-a-fuck",
   "author": "Fabian Schneider",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-filter": "^5.0.0",
     "gulp-json-editor": "^2.2.1",
     "gulp-zip": "^4.0.0"
