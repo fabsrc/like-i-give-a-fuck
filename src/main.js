@@ -6,7 +6,8 @@ function forEach(array, callback, scope) {
   }
 }
 
-changeLikeLinks( document.querySelectorAll('[data-testid="UFI2ReactionLink"]') );
+changeLikeLinks(document.querySelectorAll('.e71nayrh._18vj'));
+changeLikeLinks(document.querySelectorAll('._6a-y._3l2t._18vj'));
 
 function changeLikeLinks(links) {
   forEach(links, (link) => {
@@ -21,7 +22,8 @@ var observer = new MutationObserver((mutations) => {
     if(mutation.type === 'childList' && mutation.addedNodes.length > 0) {
       forEach(mutation.addedNodes, (addedNode) => {        
         if (addedNode.querySelectorAll) {
-          changeLikeLinks( addedNode.querySelectorAll('[data-testid="UFI2ReactionLink"]') );
+          changeLikeLinks(document.querySelectorAll('.e71nayrh._18vj'));
+          changeLikeLinks(document.querySelectorAll('._6a-y._3l2t._18vj'));
         }
       });
     }
