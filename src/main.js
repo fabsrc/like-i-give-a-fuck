@@ -6,8 +6,10 @@ function forEach(array, callback, scope) {
   }
 }
 
-changeLikeLinks(document.querySelectorAll('.e71nayrh._18vj'));
-changeLikeLinks(document.querySelectorAll('._6a-y._3l2t._18vj'));
+var likeSelector =
+  ".rq0escxv.l9j0dhe7.du4w35lb.j83agx80.pfnyh3mw.i1fnvgqd.gs1a9yip.owycx6da.btwxx1t3.ph5uu5jm.b3onmgus.e5nlhep0.ecm0bbzt.nkwizq5d.roh60bw9.mysgfdmx.hddg9phg > div:first-child span.d2edcug0.hpfvmrgz.qv66sw1b.c1et5uql.oi732d6d.ik7dh3pa.ht8s03o8.a8c37x1j.keod5gw0.nxhoafnm.aigsh9s9.d3f4x2em.fe6kdd0r.mau55g9w.c8b282yb.iv3no6db.jq4qci2q.a3bd9o3v.lrazzd5p.m9osqain > span";
+
+changeLikeLinks(document.querySelectorAll(likeSelector));
 
 function changeLikeLinks(links) {
   forEach(links, (link) => {
@@ -22,8 +24,7 @@ var observer = new MutationObserver((mutations) => {
     if(mutation.type === 'childList' && mutation.addedNodes.length > 0) {
       forEach(mutation.addedNodes, (addedNode) => {        
         if (addedNode.querySelectorAll) {
-          changeLikeLinks(document.querySelectorAll('.e71nayrh._18vj'));
-          changeLikeLinks(document.querySelectorAll('._6a-y._3l2t._18vj'));
+          changeLikeLinks(document.querySelectorAll(likeSelector));
         }
       });
     }
