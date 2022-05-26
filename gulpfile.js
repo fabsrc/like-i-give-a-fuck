@@ -14,19 +14,25 @@ gulp.task('clean', () => {
 })
 
 gulp.task('build:firefox', () => {
+  const filter = gulpFilter('**/manifest.json', { restore: true })
+
   return gulp.src(src)
+      .pipe(filter)
+      .pipe(jsonEditor({ version: pkg.version }))
+      .pipe(filter.restore)
       .pipe(zip(target + '.xpi'))
       .pipe(gulp.dest(output))
 })
 
 gulp.task('build:chrome', () => {
-  const filter = gulpFilter(['*.json'], { restore: true })
+  const filter = gulpFilter('**/manifest.json', { restore: true })
 
   return gulp.src(src)
       .pipe(filter)
-      .pipe(jsonEditor((json) => {
-        delete json.applications
-        return json
+      .pipe(jsonEditor((manifest) => {
+        manifest.version = pkg.version
+        delete manifest.applications
+        return manifest
       }))
       .pipe(filter.restore)
       .pipe(gulp.dest(output + target))
